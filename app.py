@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
 from werkzeug.utils import secure_filename
 import os
 
@@ -49,9 +50,16 @@ def upload():
         train_score = model.score(x_train, y_train)
         test_score = model.score(x_test, y_test)
         
+        train_pred = model.predict(x_train)
+        test_pred = model.predict(x_test)
+        train_mse = mean_squared_error(y_train, train_pred)
+        test_mse = mean_squared_error(y_test, test_pred)
+        
         model_info = {
             'train_score': float(train_score),
             'test_score': float(test_score),
+            'train_mse': float(train_mse),
+            'test_mse': float(test_mse),
             'slope': float(model.coef_[0]),
             'intercept': float(model.intercept_),
             'total_samples': len(df),

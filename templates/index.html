@@ -163,7 +163,8 @@
             const html = `
                 Huấn luyện thành công<br>
                 Mẫu: ${info.total_samples} (train: ${info.train_samples}, test: ${info.test_samples})<br>
-                Độ chính xác: ${(info.train_score * 100).toFixed(2)}% / ${(info.test_score * 100).toFixed(2)}%
+                Độ chính xác: ${(info.train_score * 100).toFixed(2)}% / ${(info.test_score * 100).toFixed(2)}%<br>
+                MSE: ${info.train_mse.toFixed(4)} / ${info.test_mse.toFixed(4)}
             `;
             document.getElementById('infoBox').innerHTML = html;
             document.getElementById('infoBox').style.display = 'block';

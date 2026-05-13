@@ -31,7 +31,7 @@ pip install flask pandas numpy scikit-learn openpyxl
 2. **Huấn luyện mô hình**:
    - Tại giao diện web, nhấn vào **"Choose File"** để chọn file Excel.
    - Nhấn nút **"Tải lên & Huấn luyện"**.
-   - Giao diện sẽ hiển thị thông báo "Huấn luyện thành công" kèm theo các thông số tổng quan của mô hình (độ chính xác, số mẫu).
+   - Giao diện sẽ hiển thị thông báo "Huấn luyện thành công" kèm theo các thông số tổng quan của mô hình (độ chính xác, số mẫu, sai số Mean Squared Error).
 
 3. **Dự đoán**:
    - Sau khi file và mô hình đã được xử lý xong, ô nhập điểm sẽ xuất hiện.
